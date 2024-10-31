@@ -1,0 +1,28 @@
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.26/vue.global.min.js"></script>
+<div id="demo" class="demo">
+	<demo-component title="d" m="ddd"></demo-component>
+</div>
+<script>
+	const app = Vue.createApp();
+	app.component("demo-component", {
+		template: `
+	<p>{{message}}</p>
+        <div class="demo">{{ mmm }} </div>
+        <button @click="count">点击</button>
+        <input v-model="m.message" placeholder="please enter content"></input>
+    `, data: {
+			"localD": {
+				"mmm": 1,
+				"message": "deee"
+			}
+		},
+		methods: {
+			count() {
+				this.m.mmm += 1;
+			}
+		},
+		props: ["title", "m"]
+	});
+
+	app.mount('#demo')
+</script>

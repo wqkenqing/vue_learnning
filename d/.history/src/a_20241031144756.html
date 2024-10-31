@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vue Test</title>
+	<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.26/vue.global.min.js"></script>
+</head>
+<body>
+	<div id="demo" class="demo">
+		<demo-component></demo-component>
+	</div>
+
+	<script>
+		const app2 = Vue.createApp({
+			// 根实例中的数据和方法
+			data() {
+				return {
+					message: "Root Message",
+					mmm: 1
+				}
+			},
+			methods: {
+				count() {
+					this.mmm += 1;
+				}
+			}
+		});
+
+		app2.component("demo-component", {
+			data() {
+				return {
+					message: "Ok",
+					mmm: 1
+				};
+			},
+			template: `
+				<div class="demo">{{ mmm }} </div>
+				<button @click="count">点击</button>
+				<input v-model="message" placeholder="please enter content"></input>
+			`,
+			methods: {
+				count() {
+					this.mmm += 1;
+				}
+			}
+		});
+
+		app2.mount('#demo');
+	</script>
+</body>
+</html>

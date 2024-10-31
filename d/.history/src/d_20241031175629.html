@@ -1,0 +1,88 @@
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.26/vue.global.min.js"></script>
+
+<div id="demo" class="demo">
+	<todo-list></todo-list>
+</div>
+
+<script>
+
+
+	const app = Vue.createApp({})
+	app.component("todo-list", {
+		template: `
+		<input placeholder="please enter your task" v-model='message' />
+		<button @click="add_task"><!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 示例</title>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.26/vue.global.min.js"></script>
+</head>
+<body>
+    <div id="demo" class="demo">
+        <todo-list></todo-list>
+    </div>
+
+    <script>
+        const app = Vue.createApp({});
+        
+        app.component("todo-list", {
+            template: `
+                <input placeholder="please enter your task" v-model="message" />
+                <button @click="add_task">添加任务</button>
+                
+                <ul id="task_list">
+                    <li v-for="(t, index) in tlist" :key="index">
+                        <button @click="remove_task(index)">删除任务</button>
+                        {{ index }} - {{ t }}
+                    </li>
+                </ul>
+            `,
+            data() {
+                return {
+                    message: "", // 新任务的输入内容
+                    tlist: ["a", "b", "c"] // 初始任务列表
+                };
+            },
+            methods: {
+                add_task() {
+                    if (this.message) {
+                        this.tlist.push(this.message);
+                        this.message = ""; // 清空输入框
+                    }
+                },
+                remove_task(index) {
+                    this.tlist.splice(index, 1); // 根据索引删除指定任务
+                }
+            }
+        });
+        
+        app.mount("#demo");
+    </script>
+</body>
+</html>
+添加任务</button>
+		
+		<ul id="task_list">
+		<li v-for="(t,index) in tlist" :index='index'>	<button @click="remove_task(index)">删除任务</button>
+		{{index}}-{{t}}
+		</li>	
+		</ul>	
+		`,
+		data() {
+			return {
+				tlist: ["a", "b", "c"]
+			}
+		},
+		methods: {
+			add_task() {
+				this.tlist.push(this.message)
+			},
+			remove_task(obj) {
+				this.tlist.pop(obj)
+			}
+		}
+	})
+	app.mount("#demo")
+</script>

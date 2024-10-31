@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 示例</title>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.26/vue.global.min.js"></script>
+</head>
+<body>
+    <div id="demo" class="demo">
+        <demo-component></demo-component>
+    </div>
+    
+    <script>
+        const app = Vue.createApp({});
+
+        app.component("demo-component", {
+            template: `
+                <p>{{ localM.message }}</p>
+                <div class="demo">{{ localM.mmm }} </div>
+                <button @click="count">点击</button>
+                <input v-model="localM.message" placeholder="please enter content"></input>
+            `,
+            data() {
+                return {
+                    // 独立数据，不依赖父组件传入的 props
+                    localM: { 
+                        message: "Ok", 
+                        mmm: 1 
+                    }
+                };
+            },
+            methods: {
+                count() {
+                    this.localM.mmm += 1;
+                }
+            }
+        });
+
+        app.mount('#demo');
+    </script>
+</body>
+</html>

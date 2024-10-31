@@ -1,0 +1,23 @@
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.26/vue.global.min.js"></script>
+<div id="demo" class="demo">{{message}}
+	<div v-model="mmm" class="demo">{{mmm}} </div>
+	<button @click="count">点击</input>
+
+</div>
+<script>
+	const app = {
+		data() {
+			return {
+				"message": "Ok",
+				"mmm": 1
+			}
+		},
+		methods: {
+			count() {
+				this.mmm=mmm+1
+			}
+		}
+	}
+	Vue.createApp(app).mount('#demo')
+
+</script>

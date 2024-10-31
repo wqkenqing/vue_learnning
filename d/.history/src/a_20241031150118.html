@@ -1,0 +1,40 @@
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.26/vue.global.min.js"></script>
+<div id="demo" class="demo">
+	<demo-component></demo-component>
+</div>
+<script>
+	const app = Vue.createApp()({
+		data() {
+			return {
+				"message": "Ok",
+				"mmm": 1
+			}
+		},
+		methods: {
+			count() {
+				this.mmm = this.mmm + 1
+			}
+		}
+	});
+
+	app.component("demo-component", {
+    data() {
+        return {
+            message: "Ok",
+            mmm: 1
+        };
+    },
+    template: `
+        <div class="demo">{{ mmm }} </div>
+        <button @click="count">点击</button>
+        <input v-model="message" placeholder="please enter content"></input>
+    `,
+    methods: {
+        count() {
+            this.mmm += 1;
+        }
+    }
+});
+
+	app2.mount('#demo')
+</script>

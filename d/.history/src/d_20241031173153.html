@@ -1,0 +1,25 @@
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.26/vue.global.min.js"></script>
+
+<div id="demo" class="demo">
+	<todo-list></todo-list>
+</div>
+
+<script>
+
+
+	const app = Vue.createApp({})
+	app.component("todo-list", {
+		template: `
+		<input placeholder="please enter your task" v-model='message' ></><button @click="add_task">添加任务</button>
+		<ul id="task_list">
+		<v-for >	
+		</ul>	
+		`,
+		data:{
+			return(){
+
+			}
+		}
+	})
+	app.mount("#demo")
+</script>
