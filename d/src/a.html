@@ -8,6 +8,7 @@
 		template: `
 	<div class="demo">{{localD.message}}</div>
         <div class="demo">{{ localD.mmm }} </div>
+	<div class="demo">{{ mmm_incr }} </div>
         <button @click="count">点击</button>
         <input v-model="localD.message" placeholder="please enter content"></input>
     `, data() {
@@ -23,7 +24,13 @@
 				this.localD.mmm += 1;
 			}
 		},
-		props: ["title"]
+		props: ["title"],
+		computed: {
+			"mmm_incr": function () {
+				new_m = this.localD.mmm
+				return new_m += 1
+			}
+		}
 	});
 	app.mount('#demo')
 </script>
